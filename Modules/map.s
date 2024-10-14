@@ -34,3 +34,14 @@ set_sprite:
     # Retorna 1 para indicar sucesso
     movi    r2, 1                # Retorno de sucesso no registrador r2
     ret
+
+    set_background_color:
+    # Recebe os parâmetros (R, G, B) nos registradores
+    # r4 = R (Vermelho), r5 = G (Verde), r6 = B (Azul)
+
+    # Criar o valor de 'dataA' para o registrador de background
+    movi    r9, 1                 # r9 = 1 (activation_bit)
+    slli    r9, r9, 0             # O registrador e o offset são 0, então nada muda
+                                   # Resultado final: r9 = (0 << 16) | (0 << 8) | 1
+
+    # Criar o valor de 'dataB' com as cores RGB
