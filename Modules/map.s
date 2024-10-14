@@ -45,3 +45,27 @@ set_sprite:
                                    # Resultado final: r9 = (0 << 16) | (0 << 8) | 1
 
     # Criar o valor de 'dataB' com as cores RGB
+    slli    r10, r4, 16            # r10 = R << 16
+    slli    r11, r5, 8             # r11 = G << 8
+    or      r10, r10, r11          # r10 = (R << 16) | (G << 8)
+    or      r10, r10, r6           # r10 = (R << 16) | (G << 8) | B
+
+    # Escrever dataA e dataB nos registradores de saída (GPIOs mapeados)
+    movia   r12, DATAA_ADDRESS     # Endereço mapeado para saída de dataA
+    stw     r9, 0(r12)             # Escreve o valor de dataA no endereço de saída
+
+    movia   r13, DATAB_ADDRESS     # Endereço mapeado para saída de dataB
+    stw     r10, 0(r13)            # Escreve o valor de dataB no endereço de saída
+
+    # Gerar o pulso de escrita
+    movia   r14, START_ADDRESS     # Endereço mapeado para o sinal de start
+    movi    r15, 1                 # Coloca o sinal de start em nível lógico alto (1)
+    stw     r15, 0(r14)            # Gera o pulso de escrita
+
+    # Espera breve para garantir que o pulso foi processado
+    movi    r15, 0
+    stw     r15, 0(r14)            # Coloca o sinal de start novamente em nível lógico baixo (0)
+
+    # Retorna 1 para indicar sucesso
+    movi    r2, 1                  # Retorno de sucesso no registrador r2
+    ret
