@@ -61,6 +61,10 @@ void printChar(int coordX, int coordY, char caracter, short color);
 void resetoldBoard(PartTetromino boardMatrix[LINES][COLUMNS], PartTetromino oldboardMatrix[LINES][COLUMNS]);
 void gamePause();
 
+void gameOver();
+void startGame(int option);
+
+
 // Variáveis globais para o acelerômetro
 extern int16_t axis_x; // Eixo X do acelerômetro.
 extern pthread_mutex_t lock; // Mutex para controle de acesso a recursos compartilhados.
