@@ -57,11 +57,6 @@ void execTetris()
     char text_paused[6] = "paused";
     char text_game[4] = "game";
     gpuMapping();
-    videoClear();
-    while (1)
-    {
-       startGameTela(); 
-    }
 
     while (1)
     {
@@ -70,20 +65,21 @@ void execTetris()
         score = 0;
         resetBoard(boardMatrix);
         initTetromino(&currentTetromino);
-        int pointerStateGame = 1;
+        int pointerStateGame = 0;
         videoClear();
 
         while (!checkGameOver(boardMatrix, &currentTetromino))
         {
-
             buttonValue = buttonRead();
 
             clearBoard(boardMatrix);
             gameField(score, hscore);
             changePauseState(&pointerStateGame, &buttonValue);
             buttonValue = 15;
-
-            if (pointerStateGame == 1)
+            if(pointerStateGame == 0){
+                startGameTela(); 
+            }
+            else if (pointerStateGame == 1)
             {
 				printChar(10, 59, 'P', COLOR_BLACK);
                 printChar(20, 59, 'A', COLOR_BLACK);
@@ -147,7 +143,6 @@ void execTetris()
         // drawBoard(boardMatrix);
         videoClear();
         gameOverTela();
-
         usleep(650000);
         if (score > hscore)
         {

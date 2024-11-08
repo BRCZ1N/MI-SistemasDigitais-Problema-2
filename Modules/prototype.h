@@ -62,8 +62,11 @@ int charToIndex(char c);
 void printChar(int coordX, int coordY, char caracter, short color);
 void resetoldBoard(PartTetromino boardMatrix[LINES][COLUMNS], PartTetromino oldboardMatrix[LINES][COLUMNS]);
 void gamePause();
+
 void gameOverTela();
 void startGameTela();
+void renderScreen(int frame, int width, int height, int bitmap[][]);
+
 
 // Variáveis globais para o acelerômetro
 extern int16_t axis_x; // Eixo X do acelerômetro.
