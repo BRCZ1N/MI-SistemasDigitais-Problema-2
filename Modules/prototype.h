@@ -61,8 +61,8 @@ void printChar(int coordX, int coordY, char caracter, short color);
 void resetoldBoard(PartTetromino boardMatrix[LINES][COLUMNS], PartTetromino oldboardMatrix[LINES][COLUMNS]);
 void gamePause();
 
-void gameOver();
-void startGame(int option);
+void gameOverTela();
+void startGameTela(int option);
 
 
 // Variáveis globais para o acelerômetro
