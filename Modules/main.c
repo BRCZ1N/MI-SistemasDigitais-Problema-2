@@ -44,7 +44,7 @@ int main()
 void execTetris()
 {
 
-    int state_game = 0, buttons, buttonValue, buttonValueRotate;
+    int buttons, buttonValue, buttonValueRotate;
     int16_t mg_per_lsb = 4;
 
     srand(time(NULL));
@@ -75,7 +75,7 @@ void execTetris()
             clearBoard(boardMatrix);
             gameField(score, hscore);
             changePauseState(&pointerStateGame, &buttonValue);
-            buttonValue = 15;
+
             if(pointerStateGame == 0){
                 startGameTela(); 
             }
