@@ -1,4 +1,4 @@
-#include "interface.h"
+#include "game.h"
 #include <stdio.h>
 
 #define WIDTH 80
@@ -11,7 +11,35 @@ void create_bitmap() {
         for (int j = 0; j < WIDTH; j++) {
             // Calcular índice linear a partir das coordenadas bidimensionais
             int index = i * WIDTH + j;
-            bitmap[i][j] = (interface_data[2][index] == 0xFF000000) ? 1 : 0;
+            switch (bitmap[i][j])
+            {
+            case 0x000000: // Preto 
+                bitmap[i][j] = 0;
+                break;
+            case 0xFFFFFF: // Branco
+                bitmap[i][j] = 1;
+                break;
+            case 0xFF0000: // Vermelho
+                bitmap[i][j] = 2;
+                break;
+            case 0x0000FF: // Azul 
+                bitmap[i][j] = 3;
+                break;
+            case 0x00FFFF: // Ciano
+                bitmap[i][j] = 4;
+                break;
+            case 0xFF00FF: // Magenta 
+                bitmap[i][j] = 5;
+                break;
+            case 0xFFFF00: // Amarelo
+                bitmap[i][j] = 6;
+                break;
+            case 0x00FF00: // Verde
+                bitmap[i][j] = 7;
+                break;
+            default:
+                break;
+            }
         }
     }
 }

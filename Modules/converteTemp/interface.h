@@ -1,5 +1,4 @@
-#ifndef INTERFACE_H_
-#define INTERFACE_H_
+
 #include <stdint.h>
 
 #define INTERFACE_FRAME_COUNT 3
