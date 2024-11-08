@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 
-#define GAMEOVER4FRAME_FRAME_COUNT 4
-#define GAMEOVER4FRAME_FRAME_WIDTH 80
-#define GAMEOVER4FRAME_FRAME_HEIGHT 60
+#define OVER_FRAME 4
+#define OVER_WIDTH 80
+#define OVER_HEIGHT 60
 
 /* Piskel data for "gameOver4frame" */
 

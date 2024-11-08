@@ -105,5 +105,18 @@ void changePauseState(int *pointerStateGame, int *pointerButtons)
             *pointerStateGame = 1;
         }
         break;
-    }
+    
+    case 3:
+        if (*pointerButtons == 7)
+        {
+            *pointerStateGame = 1;
+        }
+        break;
+    case 4:
+        if (*pointerButtons == 11)
+        {
+            *pointerStateGame = 0;
+        }
+        break;
+}
 }

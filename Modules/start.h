@@ -3,9 +3,9 @@
 
 #include <stdint.h>
 
-#define START6FRAMES_FRAME_COUNT 6
-#define START6FRAMES_FRAME_WIDTH 80
-#define START6FRAMES_FRAME_HEIGHT 60
+#define START_FRAME 6
+#define START_WIDTH 80
+#define START_HEIGHT 60
 
 /* Piskel data for "start6frames" */
 

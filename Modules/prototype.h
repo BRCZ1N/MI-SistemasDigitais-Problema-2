@@ -18,6 +18,8 @@
 #include "structs.h"
 #include "acelerometro.h"
 #include <unistd.h>
+#include "start.h"
+#include "over.h"
 
 void execTetris();
 int checkGameOver(PartTetromino boardMatrix[LINES][COLUMNS], Tetromino *tetromino); 
@@ -60,10 +62,8 @@ int charToIndex(char c);
 void printChar(int coordX, int coordY, char caracter, short color);
 void resetoldBoard(PartTetromino boardMatrix[LINES][COLUMNS], PartTetromino oldboardMatrix[LINES][COLUMNS]);
 void gamePause();
-
 void gameOverTela();
-void startGameTela(int option);
-
+void startGameTela();
 
 // Variáveis globais para o acelerômetro
 extern int16_t axis_x; // Eixo X do acelerômetro.
